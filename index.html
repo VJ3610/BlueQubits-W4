@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <title>Latex Equation Editor</title>
+</head>
+<body>
+    <header class="Navbar">
+        <p class="logo">Latex Equation Editor</p>
+        <input type="checkbox" name="" class="btn"/>
+        <div class="nav">
+            <ol>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ol>
+        </div>
+    </header>
+    <div class="Intro">
+        <h1>Introduction</h1>
+        <p>A LaTeX Equation Editor refers to tools or features within text editors, document processors, or online platforms that enable users to input, edit, and display mathematical equations using LaTeX syntax. LaTeX, a typesetting system, utilizes a specific syntax for representing mathematical symbols and equations.</p>
+    </div>
+    <div class="box">
+      <div class="Outertoolbar">
+        <h1>ToolBar</h1>
+          <!-- Replace the buttons in the toolbar with input elements -->
+        <div class="toolbar">
+            <input type="button" value="Font Size" onclick="changeFontSize()">
+            <input type="color" value="Font Color" onclick="changeFontColor()">
+            <input type="button" value="Undo" onclick="undo()">
+            <input type="button" value="Redo" onclick="redo()">
+            <input type="button" value="Clear" onclick="clearLatex()">
+            <input type="button" value="Font Style" onclick="changeFontStyle()">
+        </div>
+
+      </div>
+        <div class="workspace">
+            <div class="latex_eq">
+                <div class="latex_eq1">
+                    <button onclick="binaryDisplay()" id="binaryOperator">Binary Operator</button>
+                    <button onclick="caseDisplay()" id="cases">Cases</button>
+                    <button onclick="fractionDisplay()" id="fraction">Fraction</button>
+                    <button onclick="greekLettersDisplay()" id="greekLetters">Greek letters</button>
+                    <button onclick="integralDisplay()" id="integtral">Integral</button>
+                    <button onclick="operatorDisplay()" id="operator">Operator</button>
+                    <button onclick="largeOpereatorDisplay()" id="largerOperator">Large Operator</button>
+                    <button onclick="subSuperDisplay()" id="subSuper">Sub Super</button>
+                </div>
+                <div class="latex_eq_display" id="IconsContainer">
+                    <!-- <img  src="images/Binary ops/+.png" alt="minus" class="icon" onclick="updateLatex('+')" >
+                    <img src="images/Cases/x=abc.png" alt="" class="icon" onclick="updateLatex('+')">
+                    <img src="images/Fractions/d2f(x).png" alt="" class="icon" onclick="updateLatex('+')">
+                    <img src="images/greek letters/alpha.png" alt="" class="icon" onclick="updateLatex('+')">
+                    <img src="images/integral/baf(x).png" alt="" class="icon" onclick="updateLatex('+')">
+                    <img src="images/large ops/bigcap(0_n).png" alt="" class="icon" onclick="updateLatex('+')">
+                    <img src="images/Operators/f.png" alt="" class="icon" onclick="updateLatex('+')">
+                    <img src="images/Sub_Super/Cab.png" alt="" class="icon" onclick="updateLatex('+')"> -->
+                </div>
+            </div>
+            <div class="latex_code">
+                <textarea class="display" id="latexOutput"  ></textarea>
+                <!-- LaTeX symbols will be displayed here -->
+            </div>
+            <div class="Outerlatex_display">
+                <pre class="latex_display" id="codeOutput" contenteditable="true"></pre>
+           </div>
+        </div>
+        <button onclick="downloadImage()">Download Image</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
